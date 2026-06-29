@@ -68,14 +68,27 @@ export default function Hero() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(30,21,16,.85) 0%, rgba(30,21,16,.2) 55%, transparent 100%)" }} />
       </div>
 
-      {/* Slide dots */}
-      <div className="absolute top-1/2 right-4 md:right-7 -translate-y-1/2 z-10 flex flex-col gap-2">
+      {/* Slide dots — hidden on mobile */}
+      <div className="hidden md:flex absolute top-1/2 right-7 -translate-y-1/2 z-10 flex-col gap-2">
         {SLIDES.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrent(i)}
             className={`w-1 rounded-full transition-all duration-500 ${
               i === current ? "h-6 bg-cream/70" : "h-1.5 bg-cream/20 hover:bg-cream/40"
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Mobile dots — bottom center */}
+      <div className="flex md:hidden absolute bottom-24 left-1/2 -translate-x-1/2 z-10 flex-row gap-1.5">
+        {SLIDES.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`h-1 rounded-full transition-all duration-500 ${
+              i === current ? "w-5 bg-cream/70" : "w-1.5 bg-cream/25"
             }`}
           />
         ))}
@@ -99,7 +112,7 @@ export default function Hero() {
           </h1>
         </div>
         <div className="flex flex-col items-start md:items-end gap-5 md:gap-8">
-          <Image src="/logo.png" alt="a8 Real Estate Media Haus" width={200} height={70} className="h-7 md:h-14 w-auto drop-shadow-2xl opacity-90" />
+          <Image src="/logo.png" alt="a8 Real Estate Media Haus" width={200} height={70} className="h-11 md:h-14 w-auto drop-shadow-2xl opacity-90" />
           <p className="text-[13px] font-light leading-relaxed text-cream/65 max-w-[280px] md:text-right">
             <T
               es="Medios visuales premium para bienes raíces. Contamos historias que venden propiedades."
@@ -109,7 +122,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-9 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+      <div className="hidden md:flex absolute bottom-9 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-2">
         <span className="text-[9px] font-semibold tracking-[.2em] uppercase text-cream/40">
           <T es="Explorar" en="Explore" />
         </span>
