@@ -130,7 +130,7 @@ function SqftSelector({ sqftIdx, setSqftIdx }: { sqftIdx: number; setSqftIdx: (i
     <div className="relative inline-block">
       <button
         onClick={() => setOpen(o => !o)}
-        className="flex items-center gap-3 border border-cream/20 rounded-sm px-5 py-3 text-[12px] font-light text-cream/70 hover:border-cream/40 hover:text-cream transition-all cursor-none"
+        className="flex items-center gap-3 border border-cream/20 rounded-sm px-5 py-3 text-[12px] font-light text-cream/70 hover:border-cream/40 hover:text-cream transition-all"
       >
         <span className="text-cream/40 text-[10px] tracking-widest uppercase mr-1">Propiedad</span>
         <span>{SQFT_RANGES[sqftIdx].label}</span>
@@ -142,7 +142,7 @@ function SqftSelector({ sqftIdx, setSqftIdx }: { sqftIdx: number; setSqftIdx: (i
             <button
               key={i}
               onClick={() => { setSqftIdx(i); setOpen(false); }}
-              className={`w-full text-left px-5 py-3 text-[12px] font-light transition-colors cursor-none ${
+              className={`w-full text-left px-5 py-3 text-[12px] font-light transition-colors ${
                 i === sqftIdx ? "text-cream bg-brown/20" : "text-cream/50 hover:text-cream hover:bg-cream/5"
               }`}
             >
@@ -205,7 +205,7 @@ function RealtorCard({ plan, sqftIdx, lang }: { plan: typeof REALTOR_PLANS[numbe
       <div className="px-7 pb-7">
         <a
           href="#contact"
-          className={`block text-center py-3 text-[11px] font-semibold tracking-[.16em] uppercase transition-all duration-200 rounded-sm cursor-none ${
+          className={`block text-center py-3 text-[11px] font-semibold tracking-[.16em] uppercase transition-all duration-200 rounded-sm ${
             plan.featured
               ? "bg-brown text-cream hover:bg-brown-lt"
               : "border border-cream/15 text-cream/50 hover:border-cream/40 hover:text-cream"
@@ -247,7 +247,7 @@ function VacationCard({ plan, lang }: { plan: typeof vacationPlans[number]; lang
       <div className="px-7 pb-7">
         <a
           href="#contact"
-          className={`block text-center py-3 text-[11px] font-semibold tracking-[.16em] uppercase transition-all duration-200 rounded-sm cursor-none ${
+          className={`block text-center py-3 text-[11px] font-semibold tracking-[.16em] uppercase transition-all duration-200 rounded-sm ${
             plan.featured ? "bg-brown text-cream hover:bg-brown-lt" : "border border-cream/15 text-cream/50 hover:border-cream/40 hover:text-cream"
           }`}
         >
@@ -267,8 +267,8 @@ export default function Pricing() {
   const rTabs = useReveal();
 
   return (
-    <section id="pricing" className="bg-dark py-[120px]">
-      <div className="max-w-[1280px] mx-auto px-12">
+    <section id="pricing" className="bg-dark py-16 md:py-[120px]">
+      <div className="max-w-[1280px] mx-auto px-6 md:px-12">
 
         {/* Header */}
         <div ref={rHeader} className="reveal mb-14">
@@ -292,7 +292,7 @@ export default function Pricing() {
         <div ref={rTabs} className="reveal flex gap-3 mb-10">
           <button
             onClick={() => setTab("realtors")}
-            className={`px-6 py-2 text-[11px] font-semibold tracking-[.16em] uppercase rounded-sm border transition-all duration-200 cursor-none ${
+            className={`px-6 py-2 text-[11px] font-semibold tracking-[.16em] uppercase rounded-sm border transition-all duration-200 ${
               tab === "realtors" ? "bg-brown border-brown text-cream" : "bg-transparent border-cream/15 text-cream/40 hover:border-cream/30 hover:text-cream/70"
             }`}
           >
@@ -300,7 +300,7 @@ export default function Pricing() {
           </button>
           <button
             onClick={() => setTab("vacation")}
-            className={`px-6 py-2 text-[11px] font-semibold tracking-[.16em] uppercase rounded-sm border transition-all duration-200 cursor-none ${
+            className={`px-6 py-2 text-[11px] font-semibold tracking-[.16em] uppercase rounded-sm border transition-all duration-200 ${
               tab === "vacation" ? "bg-brown border-brown text-cream" : "bg-transparent border-cream/15 text-cream/40 hover:border-cream/30 hover:text-cream/70"
             }`}
           >

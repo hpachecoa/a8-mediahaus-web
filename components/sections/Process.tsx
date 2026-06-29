@@ -21,7 +21,7 @@ export default function Process() {
   const rH = useReveal();
   const refs = [useReveal(), useReveal(), useReveal(), useReveal()];
   return (
-    <section id="process" className="bg-deep px-12 py-[120px]">
+    <section id="process" className="bg-deep px-6 md:px-12 py-16 md:py-[120px]">
       <h2 ref={rH} className="reveal text-[clamp(36px,4.5vw,64px)] font-light text-cream tracking-tight leading-[1.1] mb-[72px]">
         <span className="block text-[11px] font-medium tracking-[.16em] uppercase text-brown mb-4">
           05 — <T es="Proceso" en="Process" />
@@ -29,7 +29,7 @@ export default function Process() {
         <T es={<>Cómo <em className="italic text-cream-dim">trabajamos</em></>}
            en={<>How we <em className="italic text-cream-dim">work</em></>} />
       </h2>
-      <div className="grid grid-cols-4 gap-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-12">
         {steps.map((s, i) => (
           <div key={s.num} ref={refs[i]} className={`reveal reveal-d${i} relative`}>
             {i < steps.length - 1 && (

@@ -31,7 +31,7 @@ export default function Contact() {
   const inputClass = "bg-transparent border-0 border-b border-dark/20 py-3 text-[15px] font-light text-dark placeholder:text-dark/30 outline-none focus:border-brown transition-colors w-full";
 
   return (
-    <section id="contact" className="bg-cream px-12 py-[120px] grid grid-cols-2 gap-20 items-start">
+    <section id="contact" className="bg-cream px-6 md:px-12 py-16 md:py-[120px] grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
 
       {/* Left — info */}
       <div ref={r1} className="reveal">
@@ -82,14 +82,14 @@ export default function Contact() {
             </h3>
             <button
               onClick={() => { setStatus("idle"); setForm({ name: "", email: "", phone: "", propertyType: "", message: "" }); }}
-              className="text-[11px] font-semibold tracking-[.16em] uppercase text-brown border-b border-brown/40 pb-0.5 hover:border-brown transition-colors cursor-none mt-4"
+              className="text-[11px] font-semibold tracking-[.16em] uppercase text-brown border-b border-brown/40 pb-0.5 hover:border-brown transition-colors mt-4"
             >
               <T es="Enviar otro mensaje →" en="Send another message →" />
             </button>
           </div>
         ) : (
           <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="flex flex-col gap-2">
                 <label className="text-[10px] font-semibold tracking-[.18em] uppercase text-brown">
                   <T es="Nombre *" en="Name *" />
@@ -101,7 +101,7 @@ export default function Contact() {
                 <input required type="email" placeholder="john@example.com" value={form.email} onChange={set("email")} className={inputClass} />
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="flex flex-col gap-2">
                 <label className="text-[10px] font-semibold tracking-[.18em] uppercase text-brown">
                   <T es="Teléfono" en="Phone" />
@@ -112,7 +112,7 @@ export default function Contact() {
                 <label className="text-[10px] font-semibold tracking-[.18em] uppercase text-brown">
                   <T es="Tipo de propiedad" en="Property type" />
                 </label>
-                <select value={form.propertyType} onChange={set("propertyType")} className={inputClass + " cursor-none"}>
+                <select value={form.propertyType} onChange={set("propertyType")} className={inputClass + " "}>
                   <option value="">— <T es="Seleccionar" en="Select" /> —</option>
                   <option>Residential</option>
                   <option>Vacation Rental</option>
@@ -143,7 +143,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="self-start bg-dark text-cream text-[11px] font-semibold tracking-[.18em] uppercase px-10 py-4 border border-dark rounded-sm hover:bg-brown hover:border-brown transition-colors cursor-none mt-2 disabled:opacity-50"
+              className="self-start bg-dark text-cream text-[11px] font-semibold tracking-[.18em] uppercase px-10 py-4 border border-dark rounded-sm hover:bg-brown hover:border-brown transition-colors  mt-2 disabled:opacity-50"
             >
               {status === "sending"
                 ? <T es="Enviando..." en="Sending..." />

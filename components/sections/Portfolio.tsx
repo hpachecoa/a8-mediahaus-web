@@ -70,20 +70,20 @@ function Lightbox({ project, onClose }: { project: Project; onClose: () => void 
         <span className="text-[12px] font-light tracking-widest text-cream/40 uppercase">
           {project.address} — {project.location}
         </span>
-        <button onClick={onClose} className="border border-cream/15 text-cream-dim p-2 rounded-sm hover:bg-cream/10 transition-colors cursor-none">
+        <button onClick={onClose} className="border border-cream/15 text-cream-dim p-2 rounded-sm hover:bg-cream/10 transition-colors">
           <X size={16} />
         </button>
       </div>
 
       {/* Main image */}
       <div className="flex-1 relative flex items-center justify-center px-16 py-4">
-        <button onClick={prev} className="absolute left-4 z-10 bg-deep/70 border border-cream/12 text-cream-dim p-3 rounded-sm hover:bg-cream/10 transition-colors cursor-none">
+        <button onClick={prev} className="absolute left-4 z-10 bg-deep/70 border border-cream/12 text-cream-dim p-3 rounded-sm hover:bg-cream/10 transition-colors">
           <ChevronLeft size={18} />
         </button>
         <div className="relative w-full h-full">
           <Image src={photos[current]} alt="" fill className="object-contain" unoptimized />
         </div>
-        <button onClick={next} className="absolute right-4 z-10 bg-deep/70 border border-cream/12 text-cream-dim p-3 rounded-sm hover:bg-cream/10 transition-colors cursor-none">
+        <button onClick={next} className="absolute right-4 z-10 bg-deep/70 border border-cream/12 text-cream-dim p-3 rounded-sm hover:bg-cream/10 transition-colors">
           <ChevronRight size={18} />
         </button>
       </div>
@@ -95,7 +95,7 @@ function Lightbox({ project, onClose }: { project: Project; onClose: () => void 
         </p>
         <div className="flex gap-[3px] overflow-x-auto justify-center" style={{ scrollbarWidth: "none" }}>
           {photos.map((src, i) => (
-            <button key={i} onClick={() => setCurrent(i)} className="flex-shrink-0 cursor-none">
+            <button key={i} onClick={() => setCurrent(i)} className="flex-shrink-0">
               <Image
                 src={src} alt="" width={52} height={36}
                 className={`object-cover rounded-sm border transition-all ${
@@ -117,7 +117,7 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
   return (
     <button
       onClick={onClick}
-      className="group relative flex-shrink-0 w-[380px] lg:w-[460px] overflow-hidden rounded-sm cursor-pointer text-left"
+      className="group relative flex-shrink-0 w-[280px] sm:w-[340px] lg:w-[460px] overflow-hidden rounded-sm cursor-pointer text-left"
       style={{ aspectRatio: "3/4" }}
     >
       <img
@@ -145,7 +145,7 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
 function PlaceholderCard() {
   return (
     <div
-      className="group relative flex-shrink-0 w-[380px] lg:w-[460px] overflow-hidden rounded-sm border border-cream/8 flex flex-col items-center justify-center gap-5"
+      className="group relative flex-shrink-0 w-[280px] sm:w-[340px] lg:w-[460px] overflow-hidden rounded-sm border border-cream/8 flex flex-col items-center justify-center gap-5"
       style={{ aspectRatio: "3/4" }}
     >
       <div
@@ -178,8 +178,8 @@ export default function Portfolio() {
 
   return (
     <>
-      <section id="portfolio" className="bg-deep py-[120px] overflow-hidden">
-        <div ref={rHeader} className="reveal px-12 mb-14">
+      <section id="portfolio" className="bg-deep py-16 md:py-[120px] overflow-hidden">
+        <div ref={rHeader} className="reveal px-6 md:px-12 mb-10 md:mb-14">
           <span className="block text-[11px] font-medium tracking-[.16em] uppercase text-brown mb-4">
             03 — Portfolio
           </span>
@@ -198,7 +198,7 @@ export default function Portfolio() {
         </div>
 
         <div ref={rGallery} className="reveal">
-          <div className="flex gap-5 px-12 overflow-x-auto pb-2" style={{ scrollbarWidth: "none" }}>
+          <div className="flex gap-4 md:gap-5 px-6 md:px-12 overflow-x-auto pb-2" style={{ scrollbarWidth: "none" }}>
             {PROJECTS.map(p => (
               <ProjectCard key={p.id} project={p} onClick={() => setActiveProject(p)} />
             ))}

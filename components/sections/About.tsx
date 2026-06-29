@@ -17,7 +17,7 @@ const values = [
 export default function About() {
   const r1 = useReveal(), r2 = useReveal();
   return (
-    <section id="about" className="bg-cream px-12 py-[120px] grid grid-cols-2 gap-20">
+    <section id="about" className="bg-cream px-6 md:px-12 py-16 md:py-[120px] grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
       <div ref={r1} className="reveal">
         <span className="block text-[11px] font-medium tracking-[.16em] uppercase text-brown mb-5">
           04 — <T es="Nuestra Filosofía" en="Our Philosophy" />

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { LangProvider } from "@/lib/i18n";
-import Cursor from "@/components/Cursor";
 
 export const metadata: Metadata = {
   title: "a8 Real Estate Media Haus — Every Detail Matters",
@@ -13,7 +12,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es">
       <body>
         <LangProvider>
-          <Cursor />
           {children}
         </LangProvider>
       </body>

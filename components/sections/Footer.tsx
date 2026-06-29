@@ -3,7 +3,7 @@ import { T } from "@/lib/i18n";
 
 export default function Footer() {
   return (
-    <footer className="bg-deep px-12 py-14 flex items-center justify-between border-t border-brown/20">
+    <footer className="bg-deep px-6 md:px-12 py-10 md:py-14 flex flex-col md:flex-row items-center justify-between gap-6 border-t border-brown/20">
       <Image src="/logo.png" alt="a8 Real Estate Media Haus" width={120} height={42} className="h-8 w-auto opacity-70" />
       <p className="text-[11px] text-cream/30 text-center leading-relaxed">
         &copy; 2024 a8 Real Estate Media Haus.<br />

@@ -5,7 +5,7 @@ import { T } from "@/lib/i18n";
 export default function Intro() {
   const r1 = useReveal(), r2 = useReveal();
   return (
-    <section id="intro" className="bg-deep px-12 py-[120px] grid grid-cols-2 gap-20 items-center">
+    <section id="intro" className="bg-deep px-6 md:px-12 py-16 md:py-[120px] grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
       <div ref={r1} className="reveal">
         <span className="block text-[11px] font-medium tracking-[.16em] uppercase text-brown mb-5">
           01 — <T es="Quiénes Somos" en="Who We Are" />

@@ -67,7 +67,7 @@ const Gallery4 = ({
             variant="ghost"
             onClick={() => carouselApi?.scrollPrev()}
             disabled={!canScrollPrev}
-            className="w-10 h-10 rounded-sm border border-cream/15 text-cream-dim hover:bg-cream/10 hover:text-cream disabled:opacity-30 disabled:pointer-events-auto cursor-none"
+            className="w-10 h-10 rounded-sm border border-cream/15 text-cream-dim hover:bg-cream/10 hover:text-cream disabled:opacity-30 disabled:pointer-events-auto"
           >
             <ArrowLeft className="size-4" />
           </Button>
@@ -76,7 +76,7 @@ const Gallery4 = ({
             variant="ghost"
             onClick={() => carouselApi?.scrollNext()}
             disabled={!canScrollNext}
-            className="w-10 h-10 rounded-sm border border-cream/15 text-cream-dim hover:bg-cream/10 hover:text-cream disabled:opacity-30 disabled:pointer-events-auto cursor-none"
+            className="w-10 h-10 rounded-sm border border-cream/15 text-cream-dim hover:bg-cream/10 hover:text-cream disabled:opacity-30 disabled:pointer-events-auto"
           >
             <ArrowRight className="size-4" />
           </Button>
@@ -139,7 +139,7 @@ const Gallery4 = ({
         {items.map((_, i) => (
           <button
             key={i}
-            className={`h-1.5 rounded-full transition-all duration-300 cursor-none ${
+            className={`h-1.5 rounded-full transition-all duration-300 ${
               currentSlide === i ? "bg-brown w-6" : "bg-cream/20 w-1.5"
             }`}
             onClick={() => carouselApi?.scrollTo(i)}

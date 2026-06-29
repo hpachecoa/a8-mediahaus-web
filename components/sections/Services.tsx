@@ -13,15 +13,15 @@ const services = [
 function ServiceRow({ num, es, en, descEs, descEn }: typeof services[0]) {
   const r = useReveal();
   return (
-    <div ref={r} className="reveal service-row grid grid-cols-[60px_1fr_1fr_auto] items-center gap-12 py-9 border-b border-dark/10 cursor-none group hover:pl-3 transition-all duration-300">
+    <div ref={r} className="reveal service-row flex flex-col md:grid md:grid-cols-[60px_1fr_1fr_auto] items-start md:items-center gap-3 md:gap-12 py-7 md:py-9 border-b border-dark/10 group hover:pl-1 md:hover:pl-3 transition-all duration-300">
       <span className="text-[11px] font-medium tracking-[.14em] uppercase text-brown">{num}</span>
-      <div className="text-[clamp(18px,2.2vw,28px)] font-light text-dark">
+      <div className="text-[clamp(16px,2.2vw,28px)] font-light text-dark">
         <T es={es} en={en} />
       </div>
-      <p className="text-[13px] font-light leading-relaxed text-dark/55">
+      <p className="text-[13px] font-light leading-relaxed text-dark/55 hidden md:block">
         <T es={descEs} en={descEn} />
       </p>
-      <div className="w-10 h-10 rounded-full border border-dark/20 flex items-center justify-center flex-shrink-0 group-hover:bg-brown group-hover:border-brown transition-colors">
+      <div className="hidden md:flex w-10 h-10 rounded-full border border-dark/20 items-center justify-center flex-shrink-0 group-hover:bg-brown group-hover:border-brown transition-colors">
         <svg className="w-3.5 h-3.5 stroke-dark group-hover:stroke-cream transition-colors" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
           <path d="M7 17L17 7M17 7H7M17 7v10"/>
         </svg>
@@ -33,8 +33,8 @@ function ServiceRow({ num, es, en, descEs, descEn }: typeof services[0]) {
 export default function Services() {
   const rHeader = useReveal();
   return (
-    <section id="services" className="bg-cream px-12 py-[120px]">
-      <div ref={rHeader} className="reveal flex justify-between items-end mb-20 pb-8 border-b border-dark/12">
+    <section id="services" className="bg-cream px-6 md:px-12 py-16 md:py-[120px]">
+      <div ref={rHeader} className="reveal flex flex-col md:flex-row justify-between md:items-end gap-6 mb-12 md:mb-20 pb-8 border-b border-dark/12">
         <h2 className="text-[clamp(36px,4.5vw,64px)] font-light text-dark tracking-tight leading-[1.1]">
           <span className="block text-[11px] font-medium tracking-[.16em] uppercase text-brown mb-4">
             02 — <T es="Servicios" en="Services" />
@@ -42,7 +42,7 @@ export default function Services() {
           <T es={<>Lo que<br /><em className="italic text-brown">creamos</em></>}
              en={<>What we<br /><em className="italic text-brown">create</em></>} />
         </h2>
-        <p className="text-[13px] font-light text-brown max-w-[260px] text-right leading-relaxed">
+        <p className="text-[13px] font-light text-brown max-w-[260px] md:text-right leading-relaxed">
           <T es="Cada servicio diseñado para maximizar el impacto visual de tu propiedad."
              en="Each service designed to maximize the visual impact of your property." />
         </p>
