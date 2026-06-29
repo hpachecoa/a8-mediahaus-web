@@ -54,12 +54,15 @@
 @layer base {
   * { box-sizing: border-box; }
 
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     font-family: 'ZT Nature', Georgia, serif;
     background: #F0E7D6;
     color: #352A24;
     overflow-x: hidden;
-    cursor: none;
   }
 
   a { text-decoration: none; color: inherit; }
