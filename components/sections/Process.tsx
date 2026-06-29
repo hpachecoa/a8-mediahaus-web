@@ -33,7 +33,7 @@ export default function Process() {
         {steps.map((s, i) => (
           <div key={s.num} ref={refs[i]} className={`reveal reveal-d${i} relative`}>
             {i < steps.length - 1 && (
-              <div className="absolute top-6 left-[calc(100%+24px)] w-[calc(100%-48px)] h-px bg-brown/25" />
+              <div className="hidden md:block absolute top-6 left-[calc(100%+24px)] w-[calc(100%-48px)] h-px bg-brown/25" />
             )}
             <span className="block text-[64px] font-thin leading-none text-cream/8 tracking-tighter mb-5">{s.num}</span>
             <div className="text-[16px] font-medium text-cream mb-3"><T es={s.es} en={s.en} /></div>

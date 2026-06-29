@@ -98,7 +98,7 @@ export default function Hero() {
             />
           </h1>
         </div>
-        <div className="flex flex-col md:items-end gap-5 md:gap-8">
+        <div className="flex flex-col items-start md:items-end gap-5 md:gap-8">
           <Image src="/logo.png" alt="a8 Real Estate Media Haus" width={200} height={70} className="h-7 md:h-14 w-auto drop-shadow-2xl opacity-90" />
           <p className="text-[13px] font-light leading-relaxed text-cream/65 max-w-[280px] md:text-right">
             <T
