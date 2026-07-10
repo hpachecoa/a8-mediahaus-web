@@ -78,7 +78,7 @@ export default function Hero() {
         style={{ opacity: 0, transform: "translateY(20px)" }}
       >
         {/* Mobile-only brand logo, left-aligned above the copy */}
-        <Image src="/logo.png" alt="a8 Real Estate Media Haus" width={200} height={70} className="block md:hidden h-12 w-auto opacity-90 drop-shadow-2xl" />
+        <Image src="/logo.png" alt="a8 Real Estate Media Haus" width={200} height={70} className="block md:hidden self-start h-12 w-auto opacity-90 drop-shadow-2xl" />
         <div>
           <div className="inline-block text-[9px] md:text-[10px] font-semibold tracking-[.18em] md:tracking-[.22em] uppercase text-cream-dim border border-cream/25 px-3 py-1.5 rounded-sm mb-5 md:mb-7">
             <T es="Fotografía · Video · Tours 3D · Dron · Planos" en="Photography · Video · 3D Tours · Drone · Floor Plans" />
