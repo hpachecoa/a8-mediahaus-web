@@ -29,6 +29,7 @@ export default function Nav() {
         <div className="hidden md:flex items-center gap-10">
           <a href="#services" className="text-[11px] font-medium tracking-[.16em] uppercase text-cream hover:text-cream-dim transition-colors"><T es="Servicios" en="Services" /></a>
           <a href="#portfolio" className="text-[11px] font-medium tracking-[.16em] uppercase text-cream hover:text-cream-dim transition-colors">Portfolio</a>
+          <a href="#video" className="text-[11px] font-medium tracking-[.16em] uppercase text-cream hover:text-cream-dim transition-colors">Video</a>
           <a href="#about" className="text-[11px] font-medium tracking-[.16em] uppercase text-cream hover:text-cream-dim transition-colors"><T es="Nosotros" en="About" /></a>
           <a href="#contact" className="text-[11px] font-medium tracking-[.16em] uppercase text-cream hover:text-cream-dim transition-colors"><T es="Contacto" en="Contact" /></a>
           <button onClick={toggle} className="text-[11px] font-medium tracking-[.12em] uppercase text-cream-dim hover:text-cream transition-colors bg-transparent border-none">EN / ES</button>
@@ -51,6 +52,7 @@ export default function Nav() {
           {[
             { href: "#services", es: "Servicios", en: "Services" },
             { href: "#portfolio", es: "Portfolio", en: "Portfolio" },
+            { href: "#video", es: "Video", en: "Video" },
             { href: "#about", es: "Nosotros", en: "About" },
             { href: "#contact", es: "Contacto", en: "Contact" },
           ].map(l => (

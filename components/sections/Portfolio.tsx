@@ -178,7 +178,7 @@ export default function Portfolio() {
 
   return (
     <>
-      <section id="portfolio" className="bg-deep py-16 md:py-[120px] overflow-hidden">
+      <section id="portfolio" className="bg-deep pt-16 md:pt-[120px] pb-14 md:pb-16 overflow-hidden">
         <div ref={rHeader} className="reveal px-6 md:px-12 mb-10 md:mb-14">
           <span className="block text-[11px] font-medium tracking-[.16em] uppercase text-brown mb-4">
             03 — Portfolio

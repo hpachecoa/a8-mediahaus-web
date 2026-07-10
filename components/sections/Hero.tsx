@@ -1,32 +1,14 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { T } from "@/lib/i18n";
 
-const SLIDES = [
-  "/imagenes/poryecto (9126 sabal palm cir windermere)/1L3A6626_twilight_2603c164-2.jpg",
-  "/imagenes/Proyecto (1859 red canyo dr kissime)/1859redcanyondr_002-2.jpg",
-  "/imagenes/Proyecto (1859 red canyo dr kissime)/1859redcanyondr_001-2.jpg",
-  "/imagenes/proyecto ( 1600 little falls Orlando)/1600_Little_Falls_001.jpg",
-  "/imagenes/proyecto ( 1600 little falls Orlando)/1600_Little_Falls_006-2.jpg",
-  "/imagenes/poryecto (9126 sabal palm cir windermere)/1L3A6791-2.jpg",
-  "/imagenes/poryecto (9126 sabal palm cir windermere)/1L3A7016.jpg",
-];
-
-const INTERVAL = 6000;
-const TRANSITION = 1800;
+const HERO_VIDEO = "/videos/park-square-homes.mp4";
+const HERO_POSTER = "/videos/park-square-homes-poster.jpg";
 
 export default function Hero() {
-  const [current, setCurrent] = useState(0);
   const contentRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setCurrent(c => (c + 1) % SLIDES.length);
-    }, INTERVAL);
-    return () => clearInterval(id);
-  }, []);
 
   useEffect(() => {
     const onScroll = () => {
@@ -51,47 +33,18 @@ export default function Hero() {
   return (
     <section id="hero" className="relative h-screen min-h-[600px] overflow-hidden flex items-end">
       <div ref={bgRef} className="absolute inset-0" style={{ transform: "scale(1.08)" }}>
-        {SLIDES.map((src, i) => (
-          <img
-            key={src}
-            src={src}
-            alt=""
-            className="absolute inset-0 w-full h-full object-cover object-[center_40%]"
-            style={{
-              opacity: i === current ? 1 : 0,
-              transition: `opacity ${TRANSITION}ms cubic-bezier(0.4,0,0.2,1)`,
-              willChange: "opacity",
-            }}
-          />
-        ))}
+        <video
+          src={HERO_VIDEO}
+          poster={HERO_POSTER}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover object-[center_40%]"
+        />
         <div className="absolute inset-0 bg-deep/45" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(30,21,16,.85) 0%, rgba(30,21,16,.2) 55%, transparent 100%)" }} />
-      </div>
-
-      {/* Slide dots — hidden on mobile */}
-      <div className="hidden md:flex absolute top-1/2 right-7 -translate-y-1/2 z-10 flex-col gap-2">
-        {SLIDES.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`w-1 rounded-full transition-all duration-500 ${
-              i === current ? "h-6 bg-cream/70" : "h-1.5 bg-cream/20 hover:bg-cream/40"
-            }`}
-          />
-        ))}
-      </div>
-
-      {/* Mobile dots — bottom center */}
-      <div className="flex md:hidden absolute bottom-24 left-1/2 -translate-x-1/2 z-10 flex-row gap-1.5">
-        {SLIDES.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`h-1 rounded-full transition-all duration-500 ${
-              i === current ? "w-5 bg-cream/70" : "w-1.5 bg-cream/25"
-            }`}
-          />
-        ))}
       </div>
 
       {/* Content */}
